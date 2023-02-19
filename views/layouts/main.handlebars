@@ -24,19 +24,20 @@
         class="navbar navbar-dark justify-content-between"
         style="padding: 8px 16px; background-color: #e95420;"
       >
-        <a class="navbar-brand" href="/">家庭記帳本</a>
-        {{!-- {{#if isAuthenticated}} {{user.name}} {{/if}}
-        
-            <!-- if syntax: {{#if 條件}} 內容 {{/if}} -->
+        <a class="navbar-brand" href="/">{{#if isAuthenticated}}
+            {{user.name}}
+          {{/if}}家庭記帳本</a>
+
+        <!-- if syntax: {{#if 條件}} 內容 {{/if}} -->
         {{#if isAuthenticated}}
         <div>
-          
+          <a href="/users/logout" class='btn btn-outline-light'>登出</a>
         </div>
 
         {{else}}
-        <a href="/users/login" class='btn btn-outline-light'>Login</a>
-        {{/if}} --}}
-        <a href="/users/logout" class='btn btn-outline-light'>Logout</a>
+        <a href="/users/login" class='btn btn-outline-light'>登入</a>
+        {{/if}}
+
       </nav>
 
     </header>
