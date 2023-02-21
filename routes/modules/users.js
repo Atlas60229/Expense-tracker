@@ -63,7 +63,13 @@ router.post('/register', async (req, res) => {
 
 
 router.get('/logout', (req, res) => {
-    res.redirect('/users/login')
+    req.logout(err => {
+        if (err) {
+            return next(err)
+        }
+        req.flash('success_msg', "已成功登出")
+        res.redirect('/users/login')
+    })
 })
 
 module.exports = router
