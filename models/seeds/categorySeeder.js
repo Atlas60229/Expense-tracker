@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const dataBase = require('../../config/mongoose')
 const Category = require('../category')
+const bcrypt = require('bcryptjs')
 
 const CATEGORY = {
     家居物業: '<i class="fa-solid fa-house "></i>',

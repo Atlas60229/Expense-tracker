@@ -45,7 +45,6 @@ router.put('/:_id', async (req, res) => {
         const { name, date, amount, category } = req.body
         const categoryId = await Category.findOne({ name: category })
         const expense = await Expense.findOne({ _id, userID })
-
         expense.name = name
         expense.categoryId = categoryId._id
         expense.amount = amount
