@@ -34,8 +34,6 @@ MongoDB<br>
 
 6. 啟用前先用 Terminal 輸入以下指令建立種子資料，看見seed created!代表建立成功。
 `npm run seed`
-`seed created!`
-`seed established`
 
 7. 按ctrl + c 關閉後輸入以下指令啟動伺服器，執行 app.js 檔案<br>
 `npm run dev` 或 `nodemon app.js`
@@ -46,4 +44,6 @@ MongoDB<br>
 
 9. 開啟新網頁並在網址輸入http://localhost:3000/<br>
 
-10. 關閉伺服器： ctrl + c <br>
+10. 使用試用帳號：user1@example.com或user2@example.com (密碼：12345678)登入或自行創立帳號<br>
+
+11. 關閉伺服器： ctrl + c <br>

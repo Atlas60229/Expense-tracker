@@ -23,16 +23,16 @@ const seedUser = [
 
 const seedExpenses = [
     {
-      name: "午餐",
-      date: "2019-04-23",
-      category: "餐飲食品",
-      amount: 60
+        name: "午餐",
+        date: "2019-04-23",
+        category: "餐飲食品",
+        amount: 60
     },
     {
-      name: "晚餐",
-      date: "2019-04-23",
-      category: "餐飲食品",
-      amount: 60
+        name: "晚餐",
+        date: "2019-04-23",
+        category: "餐飲食品",
+        amount: 60
     },
     {
         name: "捷運",
@@ -47,23 +47,23 @@ const seedExpenses = [
         amount: 220
     },
     {
-      name: "租金",
-      date: "2019-04-01",
-      category: "其他",
-      amount: 25000
+        name: "租金",
+        date: "2019-04-01",
+        category: "其他",
+        amount: 25000
     }
-  ]
+]
 
 dataBase.once('open', async () => {
     try {
         for (const user of seedUser) {
             const salt = await bcrypt.genSalt(10)
             const hash = await bcrypt.hash(user.password, salt)
-            const createdUser = await User.create({name: user.name, email: user.email, password: hash})
+            const createdUser = await User.create({ name: user.name, email: user.email, password: hash })
             const expensesIndexes = user.expensesIndexes
-            for (const index of expensesIndexes){
+            for (const index of expensesIndexes) {
                 let seedExpense = seedExpenses[index]
-                
+
                 const expenseCategory = await Category.findOne({ name: seedExpense.category })
                 await Expense.create({
                     name: seedExpense.name,
@@ -73,7 +73,6 @@ dataBase.once('open', async () => {
                     categoryId: expenseCategory._id
                 })
             }
-            
         }
     } catch (err) {
         console.log(err)
