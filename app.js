@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000 // PORT會由heroku自動提供到環境
 require('./config/mongoose')
 
 //  use
